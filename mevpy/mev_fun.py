@@ -768,7 +768,7 @@ def remove_missing_years(df, nmin):
     # then remove NaNs and -9999 from the record
     # df.dropna(subset=['PRCP'], inplace = True)
     df = df.dropna(subset=['PRCP'])
-    df = df.ix[df['PRCP'] >= 0]
+    df = df.iloc[df['PRCP'] >= 0]
     # check how many years remain      
     years_all_2 = df['YEAR']    
     nyears2 = np.size(pd.Series.unique(years_all_2))
